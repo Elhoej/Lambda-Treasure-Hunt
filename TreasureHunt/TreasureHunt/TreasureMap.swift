@@ -15,8 +15,21 @@ class TreasureMap {
     private var timer: Timer?
     
     var rooms = [Int: [String: String]]()
-    var coords = [Int: [Int]]()
-    private var currentRoom: Room?
+    var coords = [Int: [Int]]() {
+        didSet {
+            DispatchQueue.main.async {
+                NotificationCenter.default.post(name: .didRecieveCoordsBundle, object: nil, userInfo: ["coords": self.coords])
+            }
+        }
+    }
+    private var currentRoom: Room? {
+        didSet {
+            guard let currentRoom = currentRoom else { return }
+            DispatchQueue.main.async {
+                NotificationCenter.default.post(name: .didRecieveRoom, object: nil, userInfo: ["room": currentRoom])
+            }
+        }
+    }
     private var currentRoomId = 0
     private var traversalPath = [String]()
     private var stack = [String]()
@@ -49,6 +62,7 @@ class TreasureMap {
                 traversalPath = path as! [String]
                 rooms = mapDictionary as! [Int: [String: String]]
                 coords = coordsDictionary as! [Int: [Int]]
+                
             } catch {
                 print(error)
             }

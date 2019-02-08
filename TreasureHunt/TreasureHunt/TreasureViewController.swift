@@ -10,6 +10,9 @@ import UIKit
 
 extension Notification.Name {
     static let didReceiveCooldown = Notification.Name("didReceiveCooldown")
+    static let didRecieveRoom = Notification.Name("didRecieveRoom")
+    static let didRecieveCoordsBundle = Notification.Name("didRecieveCoordsBundle")
+    static let didRecieveSingleCoord = Notification.Name("didRecieveSingleCoord")
 }
 
 
@@ -17,6 +20,9 @@ class TreasureViewController: UIViewController {
 
     var cooldownTimer: Timer?
     var cooldown = 0
+    var currentRoom: Room?
+    var roomCount = 0
+    let cellId = "cellId"
     
     let cooldownLabel: UILabel = {
         let label = UILabel()
@@ -24,6 +30,7 @@ class TreasureViewController: UIViewController {
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         label.sizeToFit()
+        label.text = "Cooldown: 0"
         
         return label
     }()
@@ -34,6 +41,16 @@ class TreasureViewController: UIViewController {
         view.layer.cornerRadius = 16
         
         return view
+    }()
+    
+    let idLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.sizeToFit()
+        label.numberOfLines = 0
+        label.text = "ID: "
+        
+        return label
     }()
     
     let titleLabel: UILabel = {
@@ -91,6 +108,8 @@ class TreasureViewController: UIViewController {
         view.backgroundColor = .white
         setupNavbar()
         setupViews()
+        setupGrid()
+        setupObservers()
         TreasureMap.shared.initialize { (room) in
             
             guard let room = room else {
@@ -106,8 +125,55 @@ class TreasureViewController: UIViewController {
                 TreasureMap.shared.cooldown = room.cooldown! + 1
             }
         }
-        
+    }
+    
+    private func setupObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(handleCooldown), name: .didReceiveCooldown, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleNewRoom), name: .didRecieveRoom, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleCoords), name: .didRecieveCoordsBundle, object: nil)
+    }
+    
+    @objc private func handleCoords(notification: Notification) {
+        if let coords = notification.userInfo?["coords"] as? [Int: [Int]] {
+            coords.forEach { (key, value) in
+                grid[value[1] - 46][value[0] - 50].backgroundColor = .blue
+            }
+        }
+    }
+    
+    var grid = [[UIView]]()
+    
+    private func setupGrid() {
+        let numViewPerRow = 30
+        let width = (view.frame.width - 40) / CGFloat(numViewPerRow)
+        for j in 0...numViewPerRow {
+            var array = [UIView]()
+            for i in 0...numViewPerRow {
+                let cellView = UIView()
+                cellView.backgroundColor = .white
+                cellView.frame = CGRect(x: (CGFloat(i) * width) + 16, y: (CGFloat(j) * width) + 140, width: width, height: width)
+                cellView.layer.borderWidth = 0.5
+                cellView.layer.borderColor = UIColor.black.cgColor
+                view.addSubview(cellView)
+                array.append(cellView)
+            }
+            grid.append(array)
+        }
+    }
+    
+    @objc private func handleNewRoom(notification: Notification) {
+        if let room = notification.userInfo?["room"] as? Room {
+            self.currentRoom = room
+            self.roomCount += 1
+            let coords = Coords(coords: room.coordinates ?? "0,0")
+            grid[(coords?.y)! - 46][(coords?.x)! - 50].backgroundColor = .red
+            coordsLabel.text = "Coords: \(coords?.x ?? 0),\(coords?.y ?? 0)"
+            idLabel.text = "ID: \(room.roomId)"
+            titleLabel.text = "Title: \(room.title ?? "No title")"
+            messageLabel.text = "Message: \(room.messages ?? ["No message"])"
+            playersLabel.text = "Players: \(room.players ?? ["No players"])"
+            itemsLabel.text = "Items: \(room.items ?? ["No items"])"
+        }
     }
     
     @objc private func handleCooldown(notification: Notification) {
@@ -120,10 +186,9 @@ class TreasureViewController: UIViewController {
     
     @objc private func countdown() {
         cooldown -= 1
-        if cooldown < 1 {
+        if cooldown == 0 {
             cooldownTimer?.invalidate()
             cooldownTimer = nil
-            return
         }
         
         cooldownLabel.text = "Cooldown: \(cooldown)"
@@ -131,7 +196,7 @@ class TreasureViewController: UIViewController {
     
     private func setupNavbar() {
         navigationItem.title = "Treasure Map Explorer"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Explore", style: .plain, target: self, action: #selector(handleExplore))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Start", style: .plain, target: self, action: #selector(handleExplore))
     }
     
     @objc private func handleExplore() {
@@ -145,7 +210,7 @@ class TreasureViewController: UIViewController {
         view.addSubview(containerView)
         containerView.anchor(top: nil, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor, size: CGSize(width: 0, height: 300))
         
-        let leftStackView = UIStackView(arrangedSubviews: [titleLabel, messageLabel, coordsLabel])
+        let leftStackView = UIStackView(arrangedSubviews: [idLabel ,titleLabel, messageLabel, coordsLabel])
         leftStackView.axis = .vertical
         leftStackView.distribution = .fillEqually
         leftStackView.spacing = 12
@@ -161,7 +226,6 @@ class TreasureViewController: UIViewController {
         stackView.distribution = .fillEqually
         
         containerView.addSubview(stackView)
-        stackView.anchor(top: containerView.topAnchor, leading: containerView.leadingAnchor, bottom: containerView.bottomAnchor, trailing: containerView.trailingAnchor, padding: .init(top: 12, left: 12, bottom: 12, right: 12))
+        stackView.anchor(top: containerView.topAnchor, leading: containerView.leadingAnchor, bottom: containerView.bottomAnchor, trailing: containerView.trailingAnchor, padding: .init(top: 12, left: 12, bottom: 24, right: 12))
     }
 }
-
