@@ -1,0 +1,385 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AC8D5E3B220D861700EDDC6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8D5E3A220D861700EDDC6C /* AppDelegate.swift */; };
+		AC8D5E3D220D861700EDDC6C /* TreasureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8D5E3C220D861700EDDC6C /* TreasureViewController.swift */; };
+		AC8D5E42220D862100EDDC6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC8D5E41220D862100EDDC6C /* Assets.xcassets */; };
+		AC8D5E45220D862100EDDC6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC8D5E43220D862100EDDC6C /* LaunchScreen.storyboard */; };
+		AC8D5E4D220D870500EDDC6C /* TreasureMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8D5E4C220D870500EDDC6C /* TreasureMap.swift */; };
+		AC8D5E4F220D8A1600EDDC6C /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8D5E4E220D8A1600EDDC6C /* NetworkClient.swift */; };
+		AC8D5E52220D9B1800EDDC6C /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8D5E51220D9B1800EDDC6C /* HTTPMethod.swift */; };
+		AC8D5E54220D9DB800EDDC6C /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8D5E53220D9DB800EDDC6C /* Response.swift */; };
+		AC8D5E57220DA41800EDDC6C /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8D5E56220DA41800EDDC6C /* Room.swift */; };
+		AC8D5E5A220DA4CE00EDDC6C /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8D5E59220DA4CE00EDDC6C /* Direction.swift */; };
+		AC8D5E5C220DA52400EDDC6C /* Coords.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8D5E5B220DA52400EDDC6C /* Coords.swift */; };
+		AC8D5E5E220DAB9D00EDDC6C /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8D5E5D220DAB9D00EDDC6C /* Player.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AC8D5E37220D861600EDDC6C /* TreasureHunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TreasureHunt.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC8D5E3A220D861700EDDC6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AC8D5E3C220D861700EDDC6C /* TreasureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreasureViewController.swift; sourceTree = "<group>"; };
+		AC8D5E41220D862100EDDC6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AC8D5E44220D862100EDDC6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AC8D5E46220D862100EDDC6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC8D5E4C220D870500EDDC6C /* TreasureMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreasureMap.swift; sourceTree = "<group>"; };
+		AC8D5E4E220D8A1600EDDC6C /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		AC8D5E51220D9B1800EDDC6C /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		AC8D5E53220D9DB800EDDC6C /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		AC8D5E56220DA41800EDDC6C /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		AC8D5E59220DA4CE00EDDC6C /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
+		AC8D5E5B220DA52400EDDC6C /* Coords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coords.swift; sourceTree = "<group>"; };
+		AC8D5E5D220DAB9D00EDDC6C /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AC8D5E34220D861600EDDC6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AC8D5E2E220D861500EDDC6C = {
+			isa = PBXGroup;
+			children = (
+				AC8D5E39220D861600EDDC6C /* TreasureHunt */,
+				AC8D5E38220D861600EDDC6C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AC8D5E38220D861600EDDC6C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AC8D5E37220D861600EDDC6C /* TreasureHunt.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AC8D5E39220D861600EDDC6C /* TreasureHunt */ = {
+			isa = PBXGroup;
+			children = (
+				AC8D5E58220DA4C500EDDC6C /* Helpers */,
+				AC8D5E55220DA41000EDDC6C /* Model */,
+				AC8D5E50220D9B0F00EDDC6C /* Networking */,
+				AC8D5E3A220D861700EDDC6C /* AppDelegate.swift */,
+				AC8D5E3C220D861700EDDC6C /* TreasureViewController.swift */,
+				AC8D5E41220D862100EDDC6C /* Assets.xcassets */,
+				AC8D5E43220D862100EDDC6C /* LaunchScreen.storyboard */,
+				AC8D5E46220D862100EDDC6C /* Info.plist */,
+				AC8D5E4C220D870500EDDC6C /* TreasureMap.swift */,
+			);
+			path = TreasureHunt;
+			sourceTree = "<group>";
+		};
+		AC8D5E50220D9B0F00EDDC6C /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				AC8D5E4E220D8A1600EDDC6C /* NetworkClient.swift */,
+				AC8D5E51220D9B1800EDDC6C /* HTTPMethod.swift */,
+				AC8D5E53220D9DB800EDDC6C /* Response.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		AC8D5E55220DA41000EDDC6C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AC8D5E56220DA41800EDDC6C /* Room.swift */,
+				AC8D5E5D220DAB9D00EDDC6C /* Player.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AC8D5E58220DA4C500EDDC6C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				AC8D5E59220DA4CE00EDDC6C /* Direction.swift */,
+				AC8D5E5B220DA52400EDDC6C /* Coords.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AC8D5E36220D861600EDDC6C /* TreasureHunt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC8D5E49220D862100EDDC6C /* Build configuration list for PBXNativeTarget "TreasureHunt" */;
+			buildPhases = (
+				AC8D5E33220D861600EDDC6C /* Sources */,
+				AC8D5E34220D861600EDDC6C /* Frameworks */,
+				AC8D5E35220D861600EDDC6C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TreasureHunt;
+			productName = TreasureHunt;
+			productReference = AC8D5E37220D861600EDDC6C /* TreasureHunt.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AC8D5E2F220D861500EDDC6C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Simon Elhoej Steinmejer";
+				TargetAttributes = {
+					AC8D5E36220D861600EDDC6C = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = AC8D5E32220D861500EDDC6C /* Build configuration list for PBXProject "TreasureHunt" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AC8D5E2E220D861500EDDC6C;
+			productRefGroup = AC8D5E38220D861600EDDC6C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AC8D5E36220D861600EDDC6C /* TreasureHunt */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AC8D5E35220D861600EDDC6C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC8D5E45220D862100EDDC6C /* LaunchScreen.storyboard in Resources */,
+				AC8D5E42220D862100EDDC6C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AC8D5E33220D861600EDDC6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC8D5E4D220D870500EDDC6C /* TreasureMap.swift in Sources */,
+				AC8D5E3D220D861700EDDC6C /* TreasureViewController.swift in Sources */,
+				AC8D5E57220DA41800EDDC6C /* Room.swift in Sources */,
+				AC8D5E5A220DA4CE00EDDC6C /* Direction.swift in Sources */,
+				AC8D5E5C220DA52400EDDC6C /* Coords.swift in Sources */,
+				AC8D5E3B220D861700EDDC6C /* AppDelegate.swift in Sources */,
+				AC8D5E52220D9B1800EDDC6C /* HTTPMethod.swift in Sources */,
+				AC8D5E54220D9DB800EDDC6C /* Response.swift in Sources */,
+				AC8D5E5E220DAB9D00EDDC6C /* Player.swift in Sources */,
+				AC8D5E4F220D8A1600EDDC6C /* NetworkClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AC8D5E43220D862100EDDC6C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC8D5E44220D862100EDDC6C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AC8D5E47220D862100EDDC6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AC8D5E48220D862100EDDC6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AC8D5E4A220D862100EDDC6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SPRLQ9JET8;
+				INFOPLIST_FILE = TreasureHunt/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Simon.TreasureHunt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AC8D5E4B220D862100EDDC6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SPRLQ9JET8;
+				INFOPLIST_FILE = TreasureHunt/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Simon.TreasureHunt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AC8D5E32220D861500EDDC6C /* Build configuration list for PBXProject "TreasureHunt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC8D5E47220D862100EDDC6C /* Debug */,
+				AC8D5E48220D862100EDDC6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC8D5E49220D862100EDDC6C /* Build configuration list for PBXNativeTarget "TreasureHunt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC8D5E4A220D862100EDDC6C /* Debug */,
+				AC8D5E4B220D862100EDDC6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AC8D5E2F220D861500EDDC6C /* Project object */;
+}
