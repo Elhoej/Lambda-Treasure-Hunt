@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC77E498220DFE53007981CE /* AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC77E497220DFE53007981CE /* AutoLayout.swift */; };
 		AC8D5E3B220D861700EDDC6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8D5E3A220D861700EDDC6C /* AppDelegate.swift */; };
 		AC8D5E3D220D861700EDDC6C /* TreasureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8D5E3C220D861700EDDC6C /* TreasureViewController.swift */; };
 		AC8D5E42220D862100EDDC6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC8D5E41220D862100EDDC6C /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC77E497220DFE53007981CE /* AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayout.swift; sourceTree = "<group>"; };
 		AC8D5E37220D861600EDDC6C /* TreasureHunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TreasureHunt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC8D5E3A220D861700EDDC6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC8D5E3C220D861700EDDC6C /* TreasureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreasureViewController.swift; sourceTree = "<group>"; };
@@ -73,10 +75,10 @@
 				AC8D5E50220D9B0F00EDDC6C /* Networking */,
 				AC8D5E3A220D861700EDDC6C /* AppDelegate.swift */,
 				AC8D5E3C220D861700EDDC6C /* TreasureViewController.swift */,
+				AC8D5E4C220D870500EDDC6C /* TreasureMap.swift */,
 				AC8D5E41220D862100EDDC6C /* Assets.xcassets */,
 				AC8D5E43220D862100EDDC6C /* LaunchScreen.storyboard */,
 				AC8D5E46220D862100EDDC6C /* Info.plist */,
-				AC8D5E4C220D870500EDDC6C /* TreasureMap.swift */,
 			);
 			path = TreasureHunt;
 			sourceTree = "<group>";
@@ -103,6 +105,7 @@
 		AC8D5E58220DA4C500EDDC6C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				AC77E497220DFE53007981CE /* AutoLayout.swift */,
 				AC8D5E59220DA4CE00EDDC6C /* Direction.swift */,
 				AC8D5E5B220DA52400EDDC6C /* Coords.swift */,
 			);
@@ -186,6 +189,7 @@
 				AC8D5E5C220DA52400EDDC6C /* Coords.swift in Sources */,
 				AC8D5E3B220D861700EDDC6C /* AppDelegate.swift in Sources */,
 				AC8D5E52220D9B1800EDDC6C /* HTTPMethod.swift in Sources */,
+				AC77E498220DFE53007981CE /* AutoLayout.swift in Sources */,
 				AC8D5E54220D9DB800EDDC6C /* Response.swift in Sources */,
 				AC8D5E5E220DAB9D00EDDC6C /* Player.swift in Sources */,
 				AC8D5E4F220D8A1600EDDC6C /* NetworkClient.swift in Sources */,

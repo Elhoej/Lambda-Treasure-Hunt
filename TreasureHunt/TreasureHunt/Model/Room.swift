@@ -17,6 +17,7 @@ struct Room: Codable {
     var players: [String]?
     var items: [String]?
     var messages: [String]?
+    var cooldown: Int?
     
     enum CodingKeys: String, CodingKey {
         case roomId = "room_id"
@@ -27,6 +28,7 @@ struct Room: Codable {
         case items
         case messages
         case roomExits
+        case cooldown
     }
     
     init(id: Int, exits: [String: String]) {
