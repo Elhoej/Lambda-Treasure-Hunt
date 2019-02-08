@@ -10,8 +10,9 @@ import Foundation
 
 struct Room: Codable {
     var roomId: Int
-    var exits: [String]
-    var title: String
+    var exits: [String]?
+    var roomExits: [String: String]?
+    var title: String?
     var coordinates: String?
     var players: [String]?
     var items: [String]?
@@ -25,5 +26,11 @@ struct Room: Codable {
         case players
         case items
         case messages
+        case roomExits
+    }
+    
+    init(id: Int, exits: [String: String]) {
+        self.roomId = id
+        self.roomExits = exits
     }
 }
